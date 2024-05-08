@@ -2,8 +2,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
+import dotenv from 'dotenv'
+dotenv.config()
 
-mongoose.connect("mongodb+srv://sarveshdoveton2004:sarveshbabu@mern.ajzmmmx.mongodb.net/mern-thyroid?retryWrites=true&w=majority").then(() => {
+mongoose.connect(process.env.MONGO).then(() => {
     console.log('Connected to MongoDB');
   })
   .catch((err) => {
